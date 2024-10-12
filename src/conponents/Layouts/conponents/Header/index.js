@@ -19,9 +19,9 @@ function Header() {
           <button className={cx('clear')}>
             <FontAwesomeIcon icon={faCircleXmark}></FontAwesomeIcon>
           </button>
-          <button className={cx('spinner')}>
+          {/* <button className={cx('spinner')}>
             <FontAwesomeIcon icon={faSpinner}></FontAwesomeIcon>
-          </button>
+          </button> */}
           <button className={cx('search_btn')}>
             <FontAwesomeIcon icon={faMagnifyingGlass}></FontAwesomeIcon>
           </button>

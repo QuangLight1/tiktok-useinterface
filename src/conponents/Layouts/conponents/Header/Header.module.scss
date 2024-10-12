@@ -1,4 +1,7 @@
 .wrapper {
+  --border-radius-btn: 92px;
+  --right-default: 52px;
+
   width: 100%;
   box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 1px;
   height: var(--default-height);
@@ -17,19 +20,62 @@
 }
 
 .search {
-}
+  position: relative;
+  display: flex;
+  border-radius: var(--border-radius-btn);
+  width: 361px;
+  height: 46px;
+  padding-left: 16px;
+  background-color: rgba(22, 24, 35, 0.06);
+  border: 1.5px solid transparent;
 
+  input {
+    flex: 1;
+    height: 100%;
+    font-size: 1.6rem;
+    color: var(--black);
+    background-color: transparent;
+  }
+
+  &:focus-within,
+  &:hover {
+    border: 1.5px solid rgba(22, 24, 35, 0.2);
+  }
+}
+.spinner,
 .clear {
-}
-
-.spinner {
+  position: absolute;
+  right: calc(var(--right-default) + 16px);
+  top: 50%;
+  transform: translateY(-50%);
+  color: rgba(22, 24, 35, 0.34);
 }
 
 .search_btn {
+  position: relative;
+  font-size: 1.8rem;
+  color: rgba(22, 24, 35, 0.34);
+  width: var(--right-default);
+  height: 100%;
+  border-top-right-radius: var(--border-radius-btn);
+  border-bottom-right-radius: var(--border-radius-btn);
+
+  &:hover {
+    background-color: rgba(22, 24, 35, 0.06);
+    color: rgb(22, 24, 35);
+  }
+
+  &::after {
+    position: absolute;
+    content: '';
+    background-color: rgba(22, 24, 35, 0.12);
+    height: 28px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 1px;
+    right: var(--right-default);
+  }
 }
 
 .action {
-  height: 60px;
-  background-color: #000;
-  width: 100px;
 }
