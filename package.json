@@ -8,6 +8,7 @@
     "@testing-library/user-event": "^13.5.0",
     "ajv": "^8.0.0",
     "ajv-keywords": "^5.1.0",
+    "classnames": "^2.5.1",
     "customize-cra": "^1.0.0",
     "normalize.css": "^8.0.1",
     "react": "^18.3.1",
