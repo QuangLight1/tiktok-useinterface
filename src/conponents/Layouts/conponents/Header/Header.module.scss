@@ -16,8 +16,6 @@
   align-items: center;
   justify-content: space-between;
 }
-.logo {
-}
 
 .search {
   position: relative;
@@ -34,6 +32,7 @@
     height: 100%;
     font-size: 1.6rem;
     color: var(--black);
+    caret-color: var(--primary);
     background-color: transparent;
   }
 
@@ -75,7 +74,4 @@
     width: 1px;
     right: var(--right-default);
   }
-}
-
-.action {
 }
