@@ -1,0 +1,38 @@
+.wrapper {
+  display: flex;
+  align-items: center;
+  padding: 6px 16px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #f5f7f8;
+  }
+}
+
+.avata {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.info {
+  flex: 1;
+  margin-left: 12px;
+}
+
+.user {
+  font-size: 1.6rem;
+  font-weight: 500;
+}
+
+.check_icon {
+  margin-left: 6px;
+  color: #bfecff;
+  font-size: 1.2rem;
+}
+
+.username {
+  font-size: 1.4rem;
+  color: #a9a9a9;
+}
