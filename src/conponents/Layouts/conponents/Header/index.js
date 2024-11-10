@@ -1,5 +1,15 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCircleXmark, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
+import {
+  faCircleQuestion,
+  faCircleXmark,
+  faEarthAsia,
+  faEllipsisVertical,
+  faGear,
+  faKeyboard,
+  faMagnifyingGlass,
+  faMoon,
+  faPlus,
+} from '@fortawesome/free-solid-svg-icons';
 import TippyHeadless from '@tippyjs/react/headless';
 import 'tippy.js/dist/tippy.css';
 import { useEffect, useState } from 'react';
@@ -10,8 +20,33 @@ import images from '~/assets/image';
 import { Wrapper as PopperWrapper } from '../Popper';
 import AccountIitem from '../AccountIitem';
 import Button from '../Button';
+import Menu from '../Popper/Menu';
 
 const cx = classNames.bind(styles);
+
+const MENU_ITEMS = [
+  {
+    icon: <FontAwesomeIcon icon={faEarthAsia}></FontAwesomeIcon>,
+    title: 'Tiếng Việt',
+  },
+  {
+    icon: <FontAwesomeIcon icon={faCircleQuestion}></FontAwesomeIcon>,
+    title: 'Feedback and help',
+    to: '/feedback',
+  },
+  {
+    icon: <FontAwesomeIcon icon={faKeyboard}></FontAwesomeIcon>,
+    title: 'Keyboard and Shortcut',
+  },
+  {
+    icon: <FontAwesomeIcon icon={faGear}></FontAwesomeIcon>,
+    title: 'Setting',
+  },
+  {
+    icon: <FontAwesomeIcon icon={faMoon}></FontAwesomeIcon>,
+    title: 'Dark Mode',
+  },
+];
 
 function Header() {
   const [searchaccount, setSearchAccount] = useState([]);
@@ -63,10 +98,18 @@ function Header() {
         </TippyHeadless>
 
         <div className={cx('action')}>
-          <Button upload>Upload</Button>
-          <Button target="_blank" primary rounded>
+          <Button to="/upload" upload leftIcon={<FontAwesomeIcon icon={faPlus} />}>
+            Upload
+          </Button>
+          <Button target="_blank" primary>
             Đăng nhập
           </Button>
+
+          <Menu items={MENU_ITEMS}>
+            <button className={cx('more-btn')}>
+              <FontAwesomeIcon icon={faEllipsisVertical} />
+            </button>
+          </Menu>
         </div>
       </div>
     </header>

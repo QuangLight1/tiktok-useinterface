@@ -13,6 +13,16 @@
   }
 }
 
+.icon + .title,
+.title + .icon {
+  margin-left: 8px;
+}
+
+.icon {
+  text-align: center;
+  width: 24px;
+}
+
 .rounded {
   border: 1px solid rgba(22, 24, 35, 0.12);
   border-radius: 999px;

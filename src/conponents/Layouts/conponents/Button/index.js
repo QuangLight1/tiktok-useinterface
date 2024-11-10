@@ -2,18 +2,32 @@ import { Link, matchRoutes } from 'react-router-dom';
 
 import classNames from 'classnames/bind';
 import style from './Button.module.scss';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPlus, faPlusSquare } from '@fortawesome/free-solid-svg-icons';
 
 const cx = classNames.bind(style);
 
-function Button({ to, href, onClick, primary, outline, upload, children, rounded, small, large, ...passProps }) {
+function Button({
+  to,
+  href,
+  onClick,
+  primary,
+  outline,
+  upload,
+  leftIcon,
+  rightIcon,
+  children,
+  rounded,
+  small,
+  large,
+  ...passProps
+}) {
   let Comp = 'button';
 
   const classes = cx('wrapper', {
     primary,
     outline,
     upload,
+    leftIcon,
+    rightIcon,
     small,
     large,
     rounded,
@@ -34,8 +48,8 @@ function Button({ to, href, onClick, primary, outline, upload, children, rounded
 
   return (
     <Comp className={classes} {...props}>
-      {upload && <FontAwesomeIcon icon={faPlus} style={{ marginRight: '8px' }}></FontAwesomeIcon>}
-      <span>{children}</span>
+      {leftIcon && <span className={cx('icon')}>{leftIcon}</span>}
+      <span className={cx('title')}>{children}</span>
     </Comp>
   );
 }
