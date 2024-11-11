@@ -1,4 +1,5 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
 import {
   faCircleQuestion,
   faCircleXmark,
@@ -50,13 +51,11 @@ const MENU_ITEMS = [
 
 function Header() {
   const [searchaccount, setSearchAccount] = useState([]);
-
   useEffect(() => {
     setTimeout(() => {
       setSearchAccount([]);
     }, 0);
   }, []);
-
   return (
     <header className={cx('wrapper')}>
       <div className={cx('inner')}>
@@ -96,7 +95,6 @@ function Header() {
             </button>
           </div>
         </TippyHeadless>
-
         <div className={cx('action')}>
           <Button to="/upload" upload leftIcon={<FontAwesomeIcon icon={faPlus} />}>
             Upload
@@ -104,7 +102,6 @@ function Header() {
           <Button target="_blank" primary>
             Đăng nhập
           </Button>
-
           <Menu items={MENU_ITEMS}>
             <button className={cx('more-btn')}>
               <FontAwesomeIcon icon={faEllipsisVertical} />
