@@ -5,9 +5,9 @@ import Button from '../../Button';
 
 const cx = classNames.bind(styles);
 
-function MeuItems({ data }) {
+function MeuItems({ data, onclick }) {
   return (
-    <Button to="/feedback" className={cx('menu-item')} leftIcon={data.icon}>
+    <Button to={data.to} className={cx('menu-item')} leftIcon={data.icon} onClick={onclick}>
       {data.title}
     </Button>
   );

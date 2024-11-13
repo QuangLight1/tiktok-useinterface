@@ -29,6 +29,27 @@ const MENU_ITEMS = [
   {
     icon: <FontAwesomeIcon icon={faEarthAsia}></FontAwesomeIcon>,
     title: 'Tiếng Việt',
+    children: {
+      title: 'Language',
+      data: [
+        {
+          code: 'en',
+          title: 'English',
+        },
+        {
+          code: 'vi',
+          title: 'Tiếng Việt',
+        },
+        {
+          code: 'ja',
+          title: 'Nhật Bản',
+        },
+        {
+          code: 'Ch',
+          title: 'Trung Quốc',
+        },
+      ],
+    },
   },
   {
     icon: <FontAwesomeIcon icon={faCircleQuestion}></FontAwesomeIcon>,
@@ -85,11 +106,9 @@ function Header() {
               spellCheck={false}
               onChange={(e) => setSearchAccount(e.target.value)}
             />
-
             <button className={cx('clear')}>
               <FontAwesomeIcon icon={faCircleXmark} />
             </button>
-
             <button className={cx('search_btn')}>
               <FontAwesomeIcon icon={faMagnifyingGlass} />
             </button>
