@@ -31,8 +31,8 @@ function Menu({ children, items = [] }) {
   };
   return (
     <TippyHeadless
-      visible
       delay={[0, 700]}
+      offset={[12, 8]}
       interactive
       placement="bottom-end"
       render={(attrs) => (
@@ -50,6 +50,7 @@ function Menu({ children, items = [] }) {
           </PopperWrapper>
         </div>
       )}
+      onHidden={() => setHistory((prev) => prev.slice(0, 1))}
     >
       {children}
     </TippyHeadless>

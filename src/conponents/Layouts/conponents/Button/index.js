@@ -1,4 +1,4 @@
-import { Link, matchRoutes } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 import classNames from 'classnames/bind';
 import style from './Button.module.scss';
