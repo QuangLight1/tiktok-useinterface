@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import classNames from 'classnames/bind';
 import { useEffect, useState, useRef } from 'react';
 
+import { useDebounce } from '~/hooks';
 import { Wrapper as PopperWrapper } from '../Popper';
 import AccountIitem from '../AccountIitem';
 import styles from './Search.module.scss';
@@ -16,15 +17,17 @@ function Search() {
   const [showResult, setShowResult] = useState(true);
   const inputRef = useRef();
 
+  const debounced = useDebounce(searchValue, 500);
+
   useEffect(() => {
-    if (!searchValue.trim()) {
+    if (!debounced.trim()) {
       setSearchAccount([]);
       return;
     }
-    fetch(`https://tiktok.fullstack.edu.vn/api/users/search?q=${encodeURIComponent(searchValue)}&type=less`)
+    fetch(`https://tiktok.fullstack.edu.vn/api/users/search?q=${encodeURIComponent(debounced)}&type=less`)
       .then((res) => res.json())
       .then((res) => setSearchAccount(res.data));
-  }, [searchValue]);
+  }, [debounced]);
 
   const handlerClear = () => {
     setSearchValue('');
