@@ -40,7 +40,12 @@ function Search() {
   };
 
   const handlerHidenResult = () => setShowResult(false);
-
+  const handlerChange = (e) => {
+    const searchValue = e.target.value;
+    if (!searchValue.startsWith(' ')) {
+      setSearchValue(searchValue);
+    }
+  };
   return (
     <TippyHeadless
       visible={showResult && searchaccount.length > 0}
@@ -64,7 +69,7 @@ function Search() {
           value={searchValue}
           placeholder="Search accounts and videos"
           spellCheck={false}
-          onChange={(e) => setSearchValue(e.target.value)}
+          onChange={handlerChange}
           onFocus={() => setShowResult(true)}
         />
         {!!searchValue && (
@@ -72,7 +77,7 @@ function Search() {
             <FontAwesomeIcon icon={faCircleXmark} />
           </button>
         )}
-        <button className={cx('search_btn')}>
+        <button className={cx('search_btn')} onMouseDown={(e) => e.preventDefault()}>
           <FontAwesomeIcon icon={faMagnifyingGlass} />
         </button>
       </div>
