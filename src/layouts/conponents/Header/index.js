@@ -50,6 +50,70 @@ const MENU_ITEMS = [
           code: 'Ch',
           title: 'Trung Quốc',
         },
+        {
+          code: 'en',
+          title: 'English',
+        },
+        {
+          code: 'vi',
+          title: 'Tiếng Việt',
+        },
+        {
+          code: 'ja',
+          title: 'Nhật Bản',
+        },
+        {
+          code: 'Ch',
+          title: 'Trung Quốc',
+        },
+        {
+          code: 'en',
+          title: 'English',
+        },
+        {
+          code: 'vi',
+          title: 'Tiếng Việt',
+        },
+        {
+          code: 'ja',
+          title: 'Nhật Bản',
+        },
+        {
+          code: 'Ch',
+          title: 'Trung Quốc',
+        },
+        {
+          code: 'en',
+          title: 'English',
+        },
+        {
+          code: 'vi',
+          title: 'Tiếng Việt',
+        },
+        {
+          code: 'ja',
+          title: 'Nhật Bản',
+        },
+        {
+          code: 'Ch',
+          title: 'Trung Quốc',
+        },
+        {
+          code: 'en',
+          title: 'English',
+        },
+        {
+          code: 'vi',
+          title: 'Tiếng Việt',
+        },
+        {
+          code: 'ja',
+          title: 'Nhật Bản',
+        },
+        {
+          code: 'Ch',
+          title: 'Trung Quốc',
+        },
       ],
     },
   },

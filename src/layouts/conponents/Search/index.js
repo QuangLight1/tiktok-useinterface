@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import classNames from 'classnames/bind';
 import { useEffect, useState, useRef } from 'react';
 
-import * as searchServices from '~/apiServices/searchServices';
+import * as searchServices from '~/Services/searchService';
 import { useDebounce } from '~/hooks';
 import { Wrapper as PopperWrapper } from '../Popper';
 import AccountIitem from '../AccountIitem';
@@ -47,41 +47,43 @@ function Search() {
     }
   };
   return (
-    <TippyHeadless
-      visible={showResult && searchaccount.length > 0}
-      interactive
-      placement="bottom"
-      render={(attrs) => (
-        <div className={cx('search-result')} tabIndex="-1" {...attrs}>
-          <PopperWrapper>
-            <h4 className={cx('search-title')}>Acounts</h4>
-            {searchaccount.map((item) => (
-              <AccountIitem key={item.id} data={item} />
-            ))}
-          </PopperWrapper>
-        </div>
-      )}
-      onClickOutside={handlerHidenResult}
-    >
-      <div className={cx('search')}>
-        <input
-          ref={inputRef}
-          value={searchValue}
-          placeholder="Search accounts and videos"
-          spellCheck={false}
-          onChange={handlerChange}
-          onFocus={() => setShowResult(true)}
-        />
-        {!!searchValue && (
-          <button className={cx('clear')} onClick={handlerClear}>
-            <FontAwesomeIcon icon={faCircleXmark} />
-          </button>
+    <div>
+      <TippyHeadless
+        visible={showResult && searchaccount.length > 0}
+        interactive
+        placement="bottom"
+        render={(attrs) => (
+          <div className={cx('search-result')} tabIndex="-1" {...attrs}>
+            <PopperWrapper>
+              <h4 className={cx('search-title')}>Acounts</h4>
+              {searchaccount.map((item) => (
+                <AccountIitem key={item.id} data={item} />
+              ))}
+            </PopperWrapper>
+          </div>
         )}
-        <button className={cx('search_btn')} onMouseDown={(e) => e.preventDefault()}>
-          <FontAwesomeIcon icon={faMagnifyingGlass} />
-        </button>
-      </div>
-    </TippyHeadless>
+        onClickOutside={handlerHidenResult}
+      >
+        <div className={cx('search')}>
+          <input
+            ref={inputRef}
+            value={searchValue}
+            placeholder="Search accounts and videos"
+            spellCheck={false}
+            onChange={handlerChange}
+            onFocus={() => setShowResult(true)}
+          />
+          {!!searchValue && (
+            <button className={cx('clear')} onClick={handlerClear}>
+              <FontAwesomeIcon icon={faCircleXmark} />
+            </button>
+          )}
+          <button className={cx('search_btn')} onMouseDown={(e) => e.preventDefault()}>
+            <FontAwesomeIcon icon={faMagnifyingGlass} />
+          </button>
+        </div>
+      </TippyHeadless>
+    </div>
   );
 }
 

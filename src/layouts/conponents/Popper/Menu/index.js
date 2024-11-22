@@ -2,7 +2,7 @@ import { useState } from 'react';
 import TippyHeadless from '@tippyjs/react/headless';
 import classNames from 'classnames/bind';
 
-import { Wrapper as PopperWrapper } from '~/conponents/Layouts/conponents/Popper';
+import { Wrapper as PopperWrapper } from '~/layouts/conponents/Popper';
 import styles from './Menu.module.scss';
 import MeuItems from './MenuItems';
 import Header from './Header';
@@ -15,7 +15,6 @@ function Menu({ children, items = [], hideOnClick = false }) {
   const renderItems = () => {
     return current.data.map((item, index) => {
       const isParent = !!item.children;
-
       return (
         <MeuItems
           key={index}
@@ -47,7 +46,7 @@ function Menu({ children, items = [], hideOnClick = false }) {
                 }}
               />
             )}
-            {renderItems()}
+            <div className={cx('menu-body')}>{renderItems()}</div>
           </PopperWrapper>
         </div>
       )}
