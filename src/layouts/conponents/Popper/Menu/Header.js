@@ -22,4 +22,5 @@ Header.propTypes = {
   title: PropTypes.string.isRequired,
   onBack: PropTypes.func.isRequired,
 };
+
 export default Header;
