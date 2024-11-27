@@ -1,0 +1,32 @@
+.wrapper {
+}
+
+.account-item {
+  display: flex;
+  padding: 8px 8px 8px 0px;
+}
+
+.avata {
+  border-radius: 99999px;
+  width: 35px;
+  height: 35px;
+  object-fit: cover;
+}
+
+.info {
+  margin-left: 5px;
+}
+
+.nickname {
+  font-size: 1.6rem;
+}
+
+.icon-check {
+  color: red;
+  margin-left: 3px;
+  margin-bottom: 4px;
+}
+
+.name {
+  font-size: 1.3rem;
+}
